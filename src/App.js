@@ -1,25 +1,10 @@
-import React, { Fragment, useState } from "react";
-import Header from "./Component/Layout/Header";
-import Products from "./Component/Products/Products";
-import Cart from "./Component/Cart/Cart";
-function App() {
-  const [cartIsShown, setCartIsShown] = useState(false);
+import React, { Fragment } from 'react'
 
-  const showCartHandler = () => {
-    setCartIsShown(true);
-  };
-
-  const hideCartHandler = () => {
-    setCartIsShown(false);
-  };
+import Main from './Page/Main'
+export default function App() {
   return (
     <Fragment>
-      {cartIsShown && <Cart onClose={hideCartHandler} />}
-      <Header onShowCart={showCartHandler} />
-      <main>
-        <Products />
-      </main> 
-      </Fragment>
-  );
+    <Main />
+    </Fragment>
+  )
 }
-export default App;
